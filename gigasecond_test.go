@@ -14,6 +14,13 @@ const (
 	fmtDT = "2006-01-02T15:04:05"
 )
 
+func TestDev(t *testing.T) {
+	// TestDev for calling code during development and outputing the result
+	// Not a formal test
+	// View logs of non-failing tests with: go test -test.v
+	t.Log(AddGigasecond(time.Now()))
+}
+
 func TestAddGigasecond(t *testing.T) {
 	for _, tc := range addCases {
 		in := parse(tc.in, t)
